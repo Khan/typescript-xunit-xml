@@ -90,10 +90,12 @@ function toJunit(errors) {
   const obj = {
     testsuite: {
       "@name": "Typescript type errors",
+      "@time": 0,
       "@tests": errors.length,
       "@failures": errors.length,
       testcase: errors.map((err) => ({
         "@name": err.code,
+        "@time": 0,
         "@classname": err.filename + ":" + err.line + ":" + err.col,
         failure: {
           "@type": err.code,
